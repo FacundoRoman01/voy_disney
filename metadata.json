@@ -1,0 +1,6 @@
+{
+  "name": "Voy Disney",
+  "description": "Sitio web oficial de Voy Disney por Agus & Marti. Planificación mágica y viajes a Disney & Universal con asesoramiento de agentes certificados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  
+  --color-brand-white: #ffffff;
+  --color-disney-pink: #efa9c0;
+  --color-disney-pink-deep: #e08aa8;
+  --color-disney-pink-deeper: #cf6f93;
+  --color-disney-pink-light: #fbeaf0;
+  --color-disney-pink-wash: #fdf4f8;
+  --color-gray-light: #f4f4f5;
+  --color-ink: #2b2b2b;
+  --color-ink-soft: #6b6b6b;
+  --color-line: #efe7ea;
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 4px 18px rgba(222, 138, 168, 0.10);
+  --shadow-md: 0 18px 50px rgba(222, 138, 168, 0.14);
+  --shadow-lg: 0 30px 80px rgba(199, 120, 150, 0.18);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-disney-pink-wash);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .magic-stripes {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #fdf4f8,
+      #fdf4f8 15px,
+      #fbeaf0 15px,
+      #fbeaf0 30px
+    );
+  }
+}
+
