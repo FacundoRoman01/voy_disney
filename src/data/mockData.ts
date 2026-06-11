@@ -10,10 +10,10 @@ export const SERVICES_DATA: Service[] = [
     icon: "Star",
     detailedDescription: "Descubrí dos de los destinos más emblemáticos de California en un mismo viaje. El resort cuenta con Disneyland Park (hogar del icónico Castillo) y Disney California Adventure. Además, combinamos esto con Universal Studios Hollywood, que ofrece un parque temático y un estudio de cine real en funcionamiento. Todo a tarifas oficiales, sin cargos ocultos, y con la facilidad de combinarlo con Los Ángeles, Beverly Hills o Santa Mónica.",
     images: [
-      { url: "assets/img/Disney_&_Universal_Orlando/IMG_5863.webp" },
-      { url: "assets/img/Disney_&_Universal_Orlando/IMG_5882.webp" },
-      { url: "assets/img/Disney_&_Universal_Orlando/IMG_5946.webp" },
-      { url: "assets/img/Disney_&_Universal_Orlando/IMG_5984.webp" }
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5863.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5882.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5946.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5984.webp" }
     ],
     includes: [
       "Hoteles dentro y fuera de Disneyland Resort",
@@ -35,16 +35,17 @@ export const SERVICES_DATA: Service[] = [
     icon: "Compass",
     detailedDescription: "Descubrí el encanto del primer parque diseñado por Walt Disney. Te asistimos en la planificación de tu estancia en California, combinando los dos parques emblemáticos (Disneyland Park y Disney California Adventure) con itinerarios mágicos, guías de transporte y recomendaciones en la vibrante zona de Anaheim.",
     images: [
-      { url: "assets/img/California_y_Los_angeles/IMG_2545.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2544.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2543.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2542.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2541.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2540.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2539.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2538.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2536.webp" },
-      { url: "assets/img/California_y_Los_angeles/IMG_2535.webp" }
+       { url: "/assets/img/California_y_Los_angeles/IMG_2544.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2545.webp" },
+     
+      { url: "/assets/img/California_y_Los_angeles/IMG_2543.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2542.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2541.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2540.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2539.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2538.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2536.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2535.webp" }
     ],
     includes: [
       "Armado de Itinerario para 2 Parques",
@@ -63,12 +64,12 @@ export const SERVICES_DATA: Service[] = [
     icon: "Milestone",
     detailedDescription: "Considerado por muchos fanáticos como uno de los parques más hermosos del mundo, Disneyland Paris ofrece una experiencia única. El resort cuenta con Disneyland Park, hogar del espectacular Castillo de la Bella Durmiente, y Walt Disney Studios Park, para sumergirte en el cine de Pixar, Marvel y Disney. Disfrutá de espectáculos de primer nivel, gastronomía con influencia francesa y un fácil acceso desde la ciudad, siempre a valores oficiales y sin cargos adicionales.",
     images: [
-      { url: "assets/img/Disneyland_Paris/IMG_2552.webp" },
-      { url: "assets/img/Disneyland_Paris/IMG_2553.webp" },
-      { url: "assets/img/Disneyland_Paris/IMG_2554.webp" },
-      { url: "assets/img/Disneyland_Paris/IMG_2555.webp" },
-      { url: "assets/img/Disneyland_Paris/IMG_2556.webp" },
-      { url: "assets/img/Disneyland_Paris/IMG_2557.webp" }
+      { url: "/assets/img/Disneyland_Paris/IMG_2552.webp" },
+      { url: "/assets/img/Disneyland_Paris/IMG_2553.webp" },
+      { url: "/assets/img/Disneyland_Paris/IMG_2554.webp" },
+      { url: "/assets/img/Disneyland_Paris/IMG_2555.webp" },
+      { url: "/assets/img/Disneyland_Paris/IMG_2556.webp" },
+      { url: "/assets/img/Disneyland_Paris/IMG_2557.webp" }
     ],
     includes: [
       "Hoteles Disney y hoteles asociados",
@@ -82,18 +83,18 @@ export const SERVICES_DATA: Service[] = [
   },
   {
     id: "cruceros-disney",
-    title: "DISNEY CRUISE LINE",
+    title: "DISNEY CRUISE",
     subtitle: "La magia de Disney, ahora en altamar",
     description: "Disney Cruise Line combina el servicio excepcional de Disney con destinos increíbles alrededor del mundo, ofreciendo una experiencia única en alta mar.",
     badge: "CRUCEROS DISNEY",
     icon: "Ship",
     detailedDescription: "A bordo encontrarás entretenimiento de primer nivel, espectáculos al estilo Broadway, encuentros con personajes, gastronomía incluida, actividades para todas las edades y el nivel de atención que caracteriza a Disney. Cada itinerario ofrece una experiencia diferente, desde playas paradisíacas en el Caribe y Bahamas hasta aventuras por Alaska, Europa, el Mediterráneo o Asia. Te ayudamos a elegir el barco (Magic, Wonder, Dream, Fantasy, Wish, Treasure, Destiny o Adventure) y el itinerario ideal para tu familia, siempre a tarifas oficiales y sin costos adicionales.",
     images: [
-      { url: "assets/img/Crucero/IMG_2558.webp" },
-      { url: "assets/img/Crucero/IMG_2559.webp" },
-      { url: "assets/img/Crucero/IMG_2560.webp" },
-      { url: "assets/img/Crucero/IMG_2561.webp" },
-      { url: "assets/img/Crucero/IMG_2562.webp" }
+      { url: "/assets/img/Crucero/IMG_2558.webp" },
+      { url: "/assets/img/Crucero/IMG_2559.webp" },
+      { url: "/assets/img/Crucero/IMG_2560.webp" },
+      { url: "/assets/img/Crucero/IMG_2561.webp" },
+      { url: "/assets/img/Crucero/IMG_2562.webp" }
     ],
     includes: [
       "Alojamiento a bordo y comidas (restaurantes y buffet)",
@@ -107,18 +108,18 @@ export const SERVICES_DATA: Service[] = [
   },
   {
     id: "parques-alternativos-orlando",
-    title: "EXPERIENCIAS ADICIONALES",
+    title: "PARQUES ALTERNATIVOS DE ORLANDO",
     subtitle: "Más allá de Disney y Universal",
     description: "Orlando ofrece mucho más. Si tenés días extra, complementá tu viaje con LEGOLAND®, Crayola Experience o el Kennedy Space Center.",
     badge: "MÁS ALLÁ DE DISNEY",
     icon: "Star",
     detailedDescription: "Te ayudamos a incorporar experiencias adicionales que se adapten a tu familia. Podés sumar LEGOLAND® Florida Resort, ideal para niños de 2 a 12 años con atracciones interactivas de piezas LEGO. Para los más creativos, Crayola Experience en The Florida Mall es excelente para combinar con un día de compras. Y si buscás una excursión fascinante y educativa, el Kennedy Space Center en Cabo Cañaveral te permite ver cohetes reales y simuladores de la NASA.",
     images: [
-      { url: "assets/img/Parques_extras/IMG_2547.webp" },
-      { url: "assets/img/Parques_extras/IMG_2548.webp" },
-      { url: "assets/img/Parques_extras/IMG_2549.webp" },
-      { url: "assets/img/Parques_extras/IMG_2550.webp" },
-      { url: "assets/img/Parques_extras/IMG_2551.webp" }
+      { url: "/assets/img/Parques_extras/IMG_2547.webp" },
+      { url: "/assets/img/Parques_extras/IMG_2548.webp" },
+      { url: "/assets/img/Parques_extras/IMG_2549.webp" },
+      { url: "/assets/img/Parques_extras/IMG_2550.webp" },
+      { url: "/assets/img/Parques_extras/IMG_2551.webp" }
     ],
     includes: [
       "Venta y coordinación de tickets para atracciones alternativas",

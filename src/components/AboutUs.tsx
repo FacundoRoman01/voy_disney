@@ -6,7 +6,6 @@ interface AboutUsProps {
   onHistoryClick: () => void;
 }
 
-
 const foundersPhotoSrc = "/assets/img/Disney_y_Universal_Orlando/agus_y_marti.webp"; 
 const foundersPhotoAlt = "Agus y Marti, fundadoras de Voy Disney";
 
@@ -28,6 +27,10 @@ export default function AboutUs({ onHistoryClick }: AboutUsProps) {
               <img
                 src={foundersPhotoSrc}
                 alt={foundersPhotoAlt}
+                width="400"  
+                height="500" 
+                loading="lazy" 
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>

@@ -30,48 +30,43 @@ const SparkleStar = ({ className, delay = 0, size = "w-6 h-6" }: { className?: s
 );
 
 export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
-  // ==========================================
-  // --- EDITED FOR SINGLE RELIABLE IMAGE FROM ASSETS ---
-  // Removed the state logic and handleImageError function completely.
-  // Assumed directory path where assets are stored. Edit this path if needed.
-  // ==========================================
-  const finalHeroImageSrc = "assets/img/Disney_&_Universal_Orlando/IMG_5863.webp"; 
+  const finalHeroImageSrc = "/assets/img/disney_hero.webp"; 
 
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-[640px] sm:min-h-[700px] lg:min-h-[780px] xl:min-h-[840px] pt-24 lg:pt-28 flex items-center overflow-hidden border-b border-line bg-disney-pink-wash"
+      // AJUSTE 1: Cambiamos px fijos por proporciones de pantalla (vh) para un lienzo más natural
+      className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-24 lg:pt-28 flex items-center overflow-hidden border-b border-line bg-disney-pink-wash"
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 select-none overflow-hidden bg-disney-pink-light/20">
         <img
-          // --- UPDATED TO USE THE SINGLE RELIABLE IMAGE FROM ASSETS ---
-          src={finalHeroImageSrc}
-          alt="Disney World 50th Characters at Cinderella Castle"
-          // --- REMOVED handleImageError fromonError ---
-          style={{ color: "transparent" }} // Completely hides default browser alt text overlay if image loads slowly
-          className="w-full h-full object-cover object-[center_35%] lg:object-[center_28%] scale-[1.03] pointer-events-none"
-          referrerPolicy="no-referrer"
-        />
+  src={finalHeroImageSrc}
+  alt="Disney World 50th Characters at Cinderella Castle"
+  style={{ color: "transparent" }}
+  width="1920"
+  height="1080"
+  fetchPriority="high"
+  decoding="sync"
+  className="w-full h-full object-cover object-top md:object-center pointer-events-none"
+  referrerPolicy="no-referrer"
+/>
         {/* Soft elegant white/pink side gradient strictly on mobile/tablet to ensure text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-white/60 via-brand-white/30 to-transparent block lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-white/80 via-brand-white/50 to-transparent block lg:hidden" />
       </div>
 
-      {/* Floating Magic pink stars in the sky area (exactly as shown in screenshot) */}
+      {/* Floating Magic pink stars in the sky area */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-        {/* Soft pink star above the white card */}
         <SparkleStar 
           className="absolute left-[30%] top-[15%] text-disney-pink/70 hidden sm:block" 
           size="w-5 h-5"
           delay={0.2}
         />
-        {/* Soft pink star in the sky center/left */}
         <SparkleStar 
           className="absolute left-[46%] top-[10%] text-disney-pink/80" 
           size="w-6 h-6"
           delay={1.1}
         />
-        {/* Tiny pink star in the sky center/right */}
         <SparkleStar 
           className="absolute left-[54%] top-[18%] text-disney-pink/60" 
           size="w-4 h-4"
@@ -81,21 +76,19 @@ export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
 
       {/* Foreground Container */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 py-12 flex justify-center lg:justify-start">
-        {/* Main Floating Glass Action Card (Boutique, clean, exact layout match input) */}
+        {/* Main Floating Glass Action Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-brand-white/95 backdrop-blur-md rounded-[32px] p-8 sm:p-10 lg:p-12 shadow-lg border border-line relative max-w-[460px] w-full flex flex-col items-start text-left"
+          className="bg-brand-white/95 backdrop-blur-md rounded-[32px] p-8 sm:p-10 lg:p-12 shadow-lg border border-line relative max-w-[460px] w-full flex flex-col items-start text-left mt-8 lg:mt-0"
         >
-          {/* Top Right Sparkle Star on the Card strictly matching screenshot */}
           <SparkleStar 
             className="absolute top-6 right-8 text-disney-pink/70" 
             size="w-5 h-5"
             delay={0.5}
           />
 
-          {/* Golden/Lilac Category Header */}
           <span 
             className="text-disney-pink font-sans font-extrabold text-[11px] tracking-widest uppercase block mb-4 mt-0.5"
             style={{ fontFamily: "'Manrope', 'Inter', sans-serif" }}
@@ -103,7 +96,6 @@ export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
             VIAJES DISNEY & UNIVERSAL
           </span>
 
-          {/* Title styled exactly, embedding serif italic font for custom highlight */}
           <h1 className="font-serif text-ink text-3xl sm:text-[35px] lg:text-[40px] font-medium leading-[1.12] tracking-normal mb-5">
             Tu viaje a Disney comienza{" "}
             <span className="text-disney-pink italic font-normal inline-block">
@@ -112,14 +104,11 @@ export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
             de subir al avión
           </h1>
 
-          {/* Subtitle / text paragraph */}
           <p className="font-sans text-ink-soft text-[14px] leading-relaxed mb-8 max-w-sm font-light">
             Planificamos cada detalle para que vivas la magia sin preocupaciones, desde el primer &ldquo;¿y si vamos?&rdquo; hasta el último día del viaje.
           </p>
 
-          {/* Vertical Stack Action buttons exactly as requested */}
           <div className="flex flex-col gap-3 w-full sm:w-auto">
-            {/* Primary Quote button (Pink background, pill shape) */}
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -130,7 +119,6 @@ export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
               <span className="text-white text-xs">✦</span>
             </motion.button>
 
-            {/* Secondary Services button (Transparent pill, pink border/text) */}
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}

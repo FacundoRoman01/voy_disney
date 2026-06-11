@@ -1,37 +1,36 @@
 import React from "react";
 import { Instagram } from "lucide-react";
-import { motion } from "motion/react";
 
 export default function InstagramFeed() {
   const feedItems = [
     {
       id: "feed-1",
-      image: "assets/img/Disney_&_Universal_Orlando/27C2871C-E1E2-4FA8-AFBA-64F86C3032D7.webp",
+      image: "/assets/img/Disney_y_Universal_Orlando/27C2871C-E1E2-4FA8-AFBA-64F86C3032D7.webp",
       alt: "Catedral de Cenicienta en Magic Kingdom Orlando",
     },
     {
       id: "feed-2",
-      image: "assets/img/Disney_&_Universal_Orlando/IMG_6061.webp",
+      image: "/assets/img/Disney_y_Universal_Orlando/IMG_6061.webp",
       alt: "Spaceship Earth icónico de Epcot de noche",
     },
     {
       id: "feed-3",
-      image: "assets/img/Disneyland_Paris/IMG_2554.webp",
+      image: "/assets/img/Disneyland_Paris/IMG_2554.webp",
       alt: "Crucero navegando por aguas turquesas del Caribe",
     },
     {
       id: "feed-4",
-      image: "assets/img/Disneyland_Paris/IMG_2556.webp",
+      image: "/assets/img/Disneyland_Paris/IMG_2556.webp",
       alt: "Lentes de Mickey Mouse frente al castillo iluminado",
     },
     {
       id: "feed-5",
-      image: "assets/img/Crucero/IMG_2562.webp",
+      image: "/assets/img/Crucero/IMG_2562.webp",
       alt: "Montaña rusa de aventura y atracciones en Universal",
     },
     {
       id: "feed-6",
-      image: "assets/img/California_y_Los_angeles/IMG_2543.webp",
+      image: "/assets/img/California_y_Los_angeles/IMG_2543.webp",
       alt: "Globos y festejos mágicos en parques temáticos",
     },
   ];
@@ -53,14 +52,8 @@ export default function InstagramFeed() {
         </a>
       </div>
 
-      {/* Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0"
-      >
+      {/* Grid — sin motion, sin whileInView, visible inmediatamente */}
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0">
         {feedItems.map((item) => (
           <a
             key={item.id}
@@ -68,16 +61,19 @@ export default function InstagramFeed() {
             target="_blank"
             rel="noopener noreferrer"
             className="relative block aspect-square overflow-hidden group cursor-pointer"
+            aria-label={`Ver foto en Instagram: ${item.alt}`}
           >
-            {/* Image */}
             <img
               src={item.image}
               alt={item.alt}
+              width="300"
+              height="300"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-
-            {/* Overlay siempre visible — rosa suave + ícono Instagram centrado */}
+            {/* Overlay original intacto */}
             <div className="absolute inset-0 bg-[#efa9c0]/30 flex items-center justify-center">
               <div className="w-11 h-11 rounded-full bg-white/95 flex items-center justify-center shadow-md">
                 <Instagram className="w-5 h-5 text-[#efa9c0]" />
@@ -85,7 +81,7 @@ export default function InstagramFeed() {
             </div>
           </a>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

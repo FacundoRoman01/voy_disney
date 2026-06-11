@@ -20,12 +20,17 @@ import { motion, AnimatePresence } from "motion/react";
 // Importa el tipo Service
 import { Service } from "../types"; 
 import Footer from "../components/Footer";
+import AboutModal from "../components/AboutModal";
+
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("inicio");
   
   // Define el estado para el servicio seleccionado (wiring ya correcto)
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
   // Smooth scroll helper
   const navigateToSection = (sectionId: string) => {
@@ -85,7 +90,7 @@ export default function Home() {
         <TrustBar />
 
         {/* About Us (Agus & Marti) */}
-        <AboutUs onHistoryClick={() => navigateToSection("contacto")} />
+        <AboutUs onHistoryClick={() => setIsAboutModalOpen(true)} />
 
         {/* Verified Official Certifications */}
         <Certifications />
@@ -132,6 +137,23 @@ export default function Home() {
             onClose={() => setSelectedService(null)} 
           />
         )}
+
+
+
+        {/* NUEVO: Modal de Quiénes Somos */}
+        {isAboutModalOpen && (
+          <AboutModal
+            onClose={() => setIsAboutModalOpen(false)}
+            onConsultClick={() => {
+              setIsAboutModalOpen(false); // Cierra el modal
+              navigateToSection("contacto"); // Lleva al usuario al formulario
+            }}
+          />
+        )}
+
+
+
+
       </AnimatePresence>
       {/* ========================================== */}
       

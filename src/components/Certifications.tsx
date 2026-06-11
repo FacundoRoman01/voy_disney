@@ -10,7 +10,7 @@ export default function Certifications() {
       badge: "DISNEY KNOWLEDGE",
       entity: "Martina Bruñol Giorgio",
       year: "2025",
-      image: "assets/img/Logo_y_certificados/73190f13-c4cc-434e-b60c-4dceda2937da.webp"
+      image: "/assets/img/Logo_y_certificados/73190f13-c4cc-434e-b60c-4dceda2937da.webp"
     },
     {
       id: "2",
@@ -18,7 +18,7 @@ export default function Certifications() {
       badge: "DISNEY KNOWLEDGE",
       entity: "Agustín Correa",
       year: "2025",
-      image: "assets/img/Logo_y_certificados/73190f13-c4cc-434e-b60c-4dceda2937daa.webp"
+      image: "/assets/img/Logo_y_certificados/73190f13-c4cc-434e-b60c-4dceda2937daa.webp"
     },
     {
       id: "3",
@@ -26,7 +26,7 @@ export default function Certifications() {
       badge: "UNIVERSAL ESPECIALISTA",
       entity: "Martina Bruñol Giorgio",
       year: "2026",
-      image: "assets/img/Logo_y_certificados/IMG_2563.webp"
+      image: "/assets/img/Logo_y_certificados/IMG_2563.webp"
     },
     {
       id: "4",
@@ -34,7 +34,7 @@ export default function Certifications() {
       badge: "AUTHORIZED PLANNER",
       entity: "Disney Destinations",
       year: "2025",
-      image: "assets/img/Logo_y_certificados/IMG_6848.webp"
+      image: "/assets/img/Logo_y_certificados/IMG_6848.webp"
     },
     {
       id: "5",
@@ -42,7 +42,7 @@ export default function Certifications() {
       badge: "TRAVEL PROFESSIONAL",
       entity: "Universal Orlando Resort",
       year: "2025",
-      image: "assets/img/Logo_y_certificados/IMG_6860.webp"
+      image: "/assets/img/Logo_y_certificados/IMG_6860.webp"
     },
   ];
 
@@ -79,6 +79,10 @@ export default function Certifications() {
                 <img
                   src={cert.image}
                   alt={cert.label}
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
                 />
                 <div className="absolute top-4 right-4 text-disney-pink/70 z-10 p-1.5 rounded-full backdrop-blur-sm bg-white/80 border border-gray-100">
