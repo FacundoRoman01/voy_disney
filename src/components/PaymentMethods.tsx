@@ -176,17 +176,17 @@ export default function PaymentMethods() {
 
           {/* Bottom call to action block with smooth stack on mobile */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 text-center">
-            <span className="font-serif font-light text-[#2c2c2c] text-lg sm:text-[20px] italic">
+            {/* <span className="font-serif font-light text-[#2c2c2c] text-lg sm:text-[20px] italic">
               ¿Querés que te armemos un plan de pago a tu medida?
-            </span>
+            </span> */}
             <motion.a
-              href="https://wa.me/5491138245749?text=Hola!%20Quiero%20consultar%20por%20un%20plan%20de%20pagos%20a%20mi%20medida%20para%20mi%20viaje%20m%C3%A1gico."
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-[#efa9c0] hover:bg-[#e08aa8] text-brand-white font-sans text-xs sm:text-xs font-bold uppercase tracking-widest px-7 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer focus:outline-none shrink-0"
-            >
+  href="https://wa.me/5491136903650?text=Hola!%20Quiero%20consultar%20por%20un%20plan%20de%20pagos%20a%20mi%20medida%20para%20mi%20viaje%20m%C3%A1gico."
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.98 }}
+  className="bg-[#efa9c0] hover:bg-[#e08aa8] text-brand-white font-sans text-xs sm:text-xs font-bold uppercase tracking-widest px-7 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer focus:outline-none shrink-0"
+>
               <MessageCircle className="w-4 h-4 fill-current stroke-[1]" />
               <span>Consultá por WhatsApp</span>
             </motion.a>

@@ -39,7 +39,8 @@ export default function TrustBar() {
   return (
     <section className="bg-brand-white border-b border-line py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-6">
+        {/* Grilla: 2 columnas en mobile, 3 en tablets, 5 en desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-4 sm:gap-x-6">
           {trustItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -47,7 +48,10 @@ export default function TrustBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="flex flex-col items-center text-center cursor-default group"
+              // Lógica para el último elemento: Ocupa 2 columnas en mobile, 1 en desktop
+              className={`flex flex-col items-center text-center cursor-default group ${
+                index === 4 ? "col-span-2 md:col-span-1" : "col-span-1"
+              }`}
             >
               {/* Pink Accent Circle with Minimal Icon */}
               <div className="w-14 h-14 bg-disney-pink-light text-disney-pink rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm">
@@ -55,12 +59,12 @@ export default function TrustBar() {
               </div>
 
               {/* Title */}
-              <h4 className="font-sans font-bold text-ink text-xs tracking-wider leading-snug mb-2 uppercase px-4">
+              <h4 className="font-sans font-bold text-ink text-xs tracking-wider leading-snug mb-2 uppercase px-2 sm:px-4">
                 {item.title}
               </h4>
 
               {/* Description */}
-              <p className="font-sans text-ink-soft font-light text-[13px] leading-relaxed max-w-[210px]">
+              <p className="font-sans text-ink-soft font-light text-[12px] sm:text-[13px] leading-relaxed max-w-[180px] sm:max-w-[210px]">
                 {item.description}
               </p>
             </motion.div>

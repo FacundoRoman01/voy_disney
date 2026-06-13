@@ -69,7 +69,7 @@ export default function WhyUs() {
         </div>
 
         {/* Brand Value Footer card */}
-        <div className="mt-16 bg-disney-pink-wash/70 border border-line rounded-lg p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* <div className="mt-16 bg-disney-pink-wash/70 border border-line rounded-lg p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">
             <h4 className="font-serif text-ink text-xl sm:text-2xl mb-1.5 font-medium leading-[1.08] tracking-[-0.01em]">
               ¿Tenés dudas sobre los pases, reservas de comida o filas rápidas?
@@ -88,7 +88,7 @@ export default function WhyUs() {
           >
             Chatear con nosotros
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

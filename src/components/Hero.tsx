@@ -6,7 +6,6 @@ interface HeroProps {
   onServicesClick: () => void;
 }
 
-// Sparkle Star Component for that magical look and feel
 const SparkleStar = ({ className, delay = 0, size = "w-6 h-6" }: { className?: string; delay?: number; size?: string }) => (
   <motion.svg
     className={`${size} ${className}`}
@@ -30,45 +29,46 @@ const SparkleStar = ({ className, delay = 0, size = "w-6 h-6" }: { className?: s
 );
 
 export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
-  const finalHeroImageSrc = "/assets/img/disney_hero.webp"; 
+  const finalHeroImageSrc = "/assets/img/disney_hero.webp";
 
   return (
     <section
       id="inicio"
-      // AJUSTE 1: Cambiamos px fijos por proporciones de pantalla (vh) para un lienzo más natural
       className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-24 lg:pt-28 flex items-center overflow-hidden border-b border-line bg-disney-pink-wash"
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 select-none overflow-hidden bg-disney-pink-light/20">
         <img
-  src={finalHeroImageSrc}
-  alt="Disney World 50th Characters at Cinderella Castle"
-  style={{ color: "transparent" }}
-  width="1920"
-  height="1080"
-  fetchPriority="high"
-  decoding="sync"
-  className="w-full h-full object-cover object-top md:object-center pointer-events-none"
-  referrerPolicy="no-referrer"
-/>
-        {/* Soft elegant white/pink side gradient strictly on mobile/tablet to ensure text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-white/80 via-brand-white/50 to-transparent block lg:hidden" />
+          src={finalHeroImageSrc}
+          alt="Disney World Cinderella Castle"
+          style={{ color: "transparent" }}
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+          decoding="sync"
+          // La imagen es casi cuadrada, en desktop la anclamos a la derecha
+          // para que el castillo quede a la derecha y la card tenga espacio a la izquierda.
+          // object-[70%_20%] = 70% horizontal (más a la derecha), 20% vertical (más arriba, más torres)
+          className="w-full h-full object-cover object-[center_20%] lg:object-[70%_20%] pointer-events-none"
+        />
+
+
       </div>
 
-      {/* Floating Magic pink stars in the sky area */}
+      {/* Sparkle stars en el área del cielo */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-        <SparkleStar 
-          className="absolute left-[30%] top-[15%] text-disney-pink/70 hidden sm:block" 
+        <SparkleStar
+          className="absolute left-[30%] top-[15%] text-disney-pink/70 hidden sm:block"
           size="w-5 h-5"
           delay={0.2}
         />
-        <SparkleStar 
-          className="absolute left-[46%] top-[10%] text-disney-pink/80" 
+        <SparkleStar
+          className="absolute left-[46%] top-[10%] text-disney-pink/80"
           size="w-6 h-6"
           delay={1.1}
         />
-        <SparkleStar 
-          className="absolute left-[54%] top-[18%] text-disney-pink/60" 
+        <SparkleStar
+          className="absolute left-[54%] top-[18%] text-disney-pink/60"
           size="w-4 h-4"
           delay={2.4}
         />
@@ -76,20 +76,20 @@ export default function Hero({ onQuoteClick, onServicesClick }: HeroProps) {
 
       {/* Foreground Container */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 py-12 flex justify-center lg:justify-start">
-        {/* Main Floating Glass Action Card */}
+        {/* Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-brand-white/95 backdrop-blur-md rounded-[32px] p-8 sm:p-10 lg:p-12 shadow-lg border border-line relative max-w-[460px] w-full flex flex-col items-start text-left mt-8 lg:mt-0"
         >
-          <SparkleStar 
-            className="absolute top-6 right-8 text-disney-pink/70" 
+          <SparkleStar
+            className="absolute top-6 right-8 text-disney-pink/70"
             size="w-5 h-5"
             delay={0.5}
           />
 
-          <span 
+          <span
             className="text-disney-pink font-sans font-extrabold text-[11px] tracking-widest uppercase block mb-4 mt-0.5"
             style={{ fontFamily: "'Manrope', 'Inter', sans-serif" }}
           >

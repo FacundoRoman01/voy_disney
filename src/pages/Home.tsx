@@ -14,13 +14,14 @@ import InstagramFeed from "../components/InstagramFeed";
 import MagicCallToAction from "../components/MagicCallToAction";
 // 1. IMPORTA EL MODAL AQUÍ
 import ServiceModal from "../components/ServiceModal"; 
-import { Sparkles, Heart, Instagram, MessageCircle, ShieldCheck } from "lucide-react";
+
 // 2. AGREGA AnimatePresence A LA IMPORTACIÓN DE motion/react
 import { motion, AnimatePresence } from "motion/react"; 
 // Importa el tipo Service
 import { Service } from "../types"; 
 import Footer from "../components/Footer";
 import AboutModal from "../components/AboutModal";
+// import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
 
 
@@ -156,7 +157,11 @@ export default function Home() {
 
       </AnimatePresence>
       {/* ========================================== */}
+
+      {/* <FloatingWhatsApp /> */}
       
     </div>
+
+    
   );
 }

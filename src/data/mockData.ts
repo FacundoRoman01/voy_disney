@@ -13,7 +13,12 @@ export const SERVICES_DATA: Service[] = [
       { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5863.webp" },
       { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5882.webp" },
       { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5946.webp" },
-      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5984.webp" }
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_5984.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_6061.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_6120.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_6313.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_6618.webp" },
+      { url: "/assets/img/Disney_y_Universal_Orlando/IMG_6620.webp" }
     ],
     includes: [
       "Hoteles dentro y fuera de Disneyland Resort",
@@ -35,9 +40,9 @@ export const SERVICES_DATA: Service[] = [
     icon: "Compass",
     detailedDescription: "Descubrí el encanto del primer parque diseñado por Walt Disney. Te asistimos en la planificación de tu estancia en California, combinando los dos parques emblemáticos (Disneyland Park y Disney California Adventure) con itinerarios mágicos, guías de transporte y recomendaciones en la vibrante zona de Anaheim.",
     images: [
-       { url: "/assets/img/California_y_Los_angeles/IMG_2544.webp" },
+      { url: "/assets/img/California_y_Los_angeles/IMG_2544.webp" },
       { url: "/assets/img/California_y_Los_angeles/IMG_2545.webp" },
-     
+
       { url: "/assets/img/California_y_Los_angeles/IMG_2543.webp" },
       { url: "/assets/img/California_y_Los_angeles/IMG_2542.webp" },
       { url: "/assets/img/California_y_Los_angeles/IMG_2541.webp" },
@@ -45,7 +50,8 @@ export const SERVICES_DATA: Service[] = [
       { url: "/assets/img/California_y_Los_angeles/IMG_2539.webp" },
       { url: "/assets/img/California_y_Los_angeles/IMG_2538.webp" },
       { url: "/assets/img/California_y_Los_angeles/IMG_2536.webp" },
-      { url: "/assets/img/California_y_Los_angeles/IMG_2535.webp" }
+      { url: "/assets/img/California_y_Los_angeles/IMG_2535.webp" },
+
     ],
     includes: [
       "Armado de Itinerario para 2 Parques",
@@ -157,29 +163,3 @@ export const FEATURES_DATA: Feature[] = [
   }
 ];
 
-export const TESTIMONIALS_DATA: Testimonial[] = [
-  {
-    id: "1",
-    name: "Familia Rodríguez",
-    role: "Viajó con 2 niños (6 y 9 años)",
-    text: "Agus y Marti hicieron que el viaje fuera perfecto. El itinerario día por día nos ahorró horas de filas y pudimos ver todo lo que los chicos soñaban sin cansarnos. ¡Súper recomendadas!",
-    rating: 5,
-    tripType: "Disney & Universal Orlando"
-  },
-  {
-    id: "2",
-    name: "Clara & Sebastián",
-    role: "Viaje de Novios / Adultos",
-    text: "Increíble asesoría para viajar en pareja. Nos reservaron cenas románticas y nos dieron los mejores tips para aprovechar Star Wars: Galaxy's Edge. La organización fue impecable.",
-    rating: 5,
-    tripType: "Disneyland California"
-  },
-  {
-    id: "3",
-    name: "Estela M.",
-    role: "Viajó en grupo familiar de 8 personas",
-    text: "Coordinar un viaje para 8 personas de distintas edades parecía imposible hasta que contactamos a Voy Disney. Hicieron reservas alineadas y tuvimos unas vacaciones inolvidables.",
-    rating: 5,
-    tripType: "Cruceros Disney & Orlando"
-  }
-];

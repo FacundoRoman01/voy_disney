@@ -8,23 +8,58 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: "1",
-      name: "Micaela — Familia",
-      tripType: "Disney World",
-      text: "Excelente atención desde el primer momento hasta que volvimos. Siempre presentes y resolvieron todo.",
+      name: "Familia Tortoriello",
+      groupSize: "Grupo familiar · 6 personas",
+      date: "Marzo 2026",
+      text: "Gracias por todo, fue un viaje inolvidable, mágico y emocionante. Gracias por estar todo el tiempo al pendiente y por tu soporte. Lo repetiríamos sin dudarlo, y épico el cierre de parques con Magic, es para hacerlo mil veces.",
       rating: 5,
     },
     {
       id: "2",
-      name: "Martín y Juli",
-      tripType: "Universal Orlando",
-      text: "Gracias a Flor y Fran tuvimos el viaje más organizado y disfrutamos cada minuto sin preocupaciones.",
+      name: "Iliana Ugolino",
+      groupSize: "Grupo familiar · 5 personas",
+      date: "Junio 2026",
+      text: "La pasamos espectacular, fue un sueño cumplido y cada día superó nuestras expectativas. Todo salió tal cual lo planeamos, sin contratiempos. Queremos agradecerte de corazón por tu predisposición, paciencia y acompañamiento en todo momento.",
       rating: 5,
     },
     {
       id: "3",
-      name: "Agus y Leo",
-      tripType: "Disney Cruise Line",
-      text: "El crucero fue soñado. Nos ayudaron con todo y los consejos hicieron la diferencia.",
+      name: "Familia Fracchia",
+      groupSize: "Grupo familiar · 9 personas",
+      date: "Abril 2026",
+      text: "Hermoso todo Martu, fue mágico y su servicio perfecto. Si volvemos, sin duda te vamos a contactar y recomendar.",
+      rating: 5,
+    },
+    {
+      id: "4",
+      name: "Claudia Aletto",
+      groupSize: "Grupo familiar · 2 personas",
+      date: "Mayo 2026",
+      text: "Todo fantástico, la planificación súper. Gracias por acompañarnos en cada momento y hacer que este viaje haya salido mejor de lo que soñamos.",
+      rating: 5,
+    },
+    {
+      id: "5",
+      name: "Alejandro Picardi",
+      groupSize: "Grupo familiar · 4 personas",
+      date: "Enero 2026",
+      text: "Martu, una grosa, todo impecable. Gracias por el regalito también. Fue una experiencia increíble y ya estamos pensando cuándo será la vuelta — obviamente serás recomendada.",
+      rating: 5,
+    },
+    {
+      id: "6",
+      name: "Javier Flores",
+      groupSize: "Grupo familiar · 3 personas",
+      date: "Diciembre 2025",
+      text: "Todo excelente. Al principio nos agobiaba tanta información de los parques por la inmensidad que tienen, pero contábamos con tu planificación que ayudó en todo momento. En Julio 2026 volvemos con ustedes.",
+      rating: 5,
+    },
+    {
+      id: "7",
+      name: "Familia Di Nesta",
+      groupSize: "Grupo familiar · 5 personas",
+      date: "Enero 2026",
+      text: "Muchas gracias por los detalles y la planificación, todo excelente.",
       rating: 5,
     },
   ];
@@ -36,6 +71,13 @@ export default function Testimonials() {
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Desktop: 3 visible cards cycling through all
+  const visibleCards = [0, 1, 2].map(
+    (offset) => testimonials[(activeIndex + offset) % testimonials.length]
+  );
+
+  const current = testimonials[activeIndex];
 
   return (
     <section
@@ -49,98 +91,89 @@ export default function Testimonials() {
             LO QUE DICEN NUESTROS VIAJEROS
           </span>
           <h2 className="font-serif text-ink text-3xl sm:text-4xl lg:text-[49px] font-medium leading-[1.08] tracking-[-0.01em]">
-            Historias que nos <span className="text-disney-pink italic font-normal inline-block">llenan el alma</span>
+            Historias que nos{" "}
+            <span className="text-disney-pink italic font-normal inline-block">
+              llenan el alma
+            </span>
           </h2>
         </div>
 
-        {/* Desktop View (Side by Side Grid) */}
+        {/* Desktop: 3 cards */}
         <div className="hidden md:grid grid-cols-3 gap-8">
-          {testimonials.map((item, idx) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-brand-white rounded-md p-8 border border-line shadow-sm relative flex flex-col justify-between hover:shadow-md transition-all duration-300"
-            >
-              <div>
-                {/* Visual Stars Row */}
-                <div className="flex space-x-1 mb-6">
-                  {Array.from({ length: item.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-disney-pink fill-disney-pink stroke-none" />
-                  ))}
-                </div>
-
-                {/* Testimonial text */}
-                <p className="font-serif text-ink italic font-normal text-base sm:text-[17px] leading-relaxed mb-8">
-                  &ldquo;{item.text}&rdquo;
-                </p>
-              </div>
-
-              {/* Author Info block */}
-              <div className="flex items-center space-x-4 mt-auto pt-5 border-t border-line">
-                <div className="w-11 h-11 bg-disney-pink-wash border border-line flex items-center justify-center text-[10px] font-sans font-extrabold text-disney-pink shrink-0 rounded-full shadow-inner select-none">
-                  FOTO
-                </div>
+          <AnimatePresence mode="popLayout">
+            {visibleCards.map((item, localIdx) => (
+              <motion.div
+                key={`${item.id}-${activeIndex}`}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ delay: localIdx * 0.07, duration: 0.35 }}
+                className="bg-brand-white rounded-2xl p-8 border border-line shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300"
+              >
                 <div>
+                  <div className="flex space-x-1 mb-6">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-disney-pink fill-disney-pink stroke-none" />
+                    ))}
+                  </div>
+                  <p className="font-serif text-ink italic font-normal text-base sm:text-[17px] leading-relaxed mb-8">
+                    &ldquo;{item.text}&rdquo;
+                  </p>
+                </div>
+                <div className="pt-5 border-t border-line mt-auto">
                   <h4 className="font-sans font-bold text-ink text-sm tracking-tight">
                     {item.name}
                   </h4>
                   <p className="font-sans text-[11px] text-disney-pink font-bold uppercase tracking-wider mt-0.5">
-                    {item.tripType}
+                    {item.groupSize}
                   </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile Carousel View */}
-        <div className="md:hidden relative px-2">
-          <div className="min-h-[260px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-brand-white rounded-md p-8 border border-line shadow-sm flex flex-col justify-between w-full"
-              >
-                <div>
-                  <div className="flex space-x-1 mb-6">
-                    {Array.from({ length: testimonials[activeIndex].rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-disney-pink fill-disney-pink stroke-none" />
-                    ))}
-                  </div>
-
-                  <p className="font-serif text-ink italic font-normal text-base leading-relaxed mb-8">
-                    &ldquo;{testimonials[activeIndex].text}&rdquo;
+                  <p className="font-sans text-[10px] text-ink-soft/60 font-medium uppercase tracking-wider mt-0.5">
+                    {item.date}
                   </p>
-                </div>
-
-                <div className="flex items-center space-x-4 mt-auto pt-5 border-t border-line">
-                  <div className="w-11 h-11 bg-disney-pink-wash border border-line flex items-center justify-center text-[10px] font-sans font-extrabold text-disney-pink shrink-0 rounded-full select-none">
-                    FOTO
-                  </div>
-                  <div>
-                    <h4 className="font-sans font-bold text-ink text-sm tracking-tight">
-                      {testimonials[activeIndex].name}
-                    </h4>
-                    <p className="font-sans text-[11px] text-disney-pink font-bold uppercase tracking-wider mt-0.5">
-                      {testimonials[activeIndex].tripType}
-                    </p>
-                  </div>
                 </div>
               </motion.div>
-            </AnimatePresence>
-          </div>
+            ))}
+          </AnimatePresence>
         </div>
 
-        {/* Custom Decorative Carousel Controls Row */}
+        {/* Mobile: 1 card */}
+        <div className="md:hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-brand-white rounded-2xl p-8 border border-line shadow-sm flex flex-col"
+            >
+              <div>
+                <div className="flex space-x-1 mb-6">
+                  {Array.from({ length: current.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-disney-pink fill-disney-pink stroke-none" />
+                  ))}
+                </div>
+                <p className="font-serif text-ink italic font-normal text-base leading-relaxed mb-8">
+                  &ldquo;{current.text}&rdquo;
+                </p>
+              </div>
+              <div className="pt-5 border-t border-line mt-auto">
+                <h4 className="font-sans font-bold text-ink text-sm tracking-tight">
+                  {current.name}
+                </h4>
+                <p className="font-sans text-[11px] text-disney-pink font-bold uppercase tracking-wider mt-0.5">
+                  {current.groupSize}
+                </p>
+                <p className="font-sans text-[10px] text-ink-soft/60 font-medium uppercase tracking-wider mt-0.5">
+                  {current.date}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Controls */}
         <div className="flex items-center justify-center space-x-4 mt-12">
-          {/* Left Button */}
           <button
             onClick={handlePrev}
             className="w-11 h-11 border border-line bg-brand-white hover:bg-disney-pink-light rounded-full flex items-center justify-center text-disney-pink transition-colors focus:outline-none cursor-pointer group shadow-sm"
@@ -148,29 +181,20 @@ export default function Testimonials() {
             <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </button>
 
-          {/* Indicators matching screenshot exactly */}
           <div className="flex items-center space-x-2">
-            {testimonials.map((_, idx) => {
-              const isActive = mdActive() ? true : activeIndex === idx;
-
-              // To replicate the pill indicator (selected) and simple dots,
-              // but since desktop has all 3 active, we show all active as pill or we animate it dynamically.
-              // Let's create a dynamic indicator!
-              return (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all duration-300 focus:outline-none ${
-                    isActive
-                      ? "w-8 bg-disney-pink"
-                      : "w-2.5 bg-disney-pink-light hover:bg-disney-pink/50"
-                  }`}
-                />
-              );
-            })}
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`h-2.5 rounded-full transition-all duration-300 focus:outline-none ${
+                  idx === activeIndex
+                    ? "w-8 bg-disney-pink"
+                    : "w-2.5 bg-disney-pink-light hover:bg-disney-pink/50"
+                }`}
+              />
+            ))}
           </div>
 
-          {/* Right Button */}
           <button
             onClick={handleNext}
             className="w-11 h-11 border border-line bg-brand-white hover:bg-disney-pink-light rounded-full flex items-center justify-center text-disney-pink transition-colors focus:outline-none cursor-pointer group shadow-sm"
@@ -178,23 +202,7 @@ export default function Testimonials() {
             <ChevronRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </button>
         </div>
-
-        {/* Under-caption matching exactly */}
-        <div className="text-center mt-12">
-          <p className="font-sans text-[11px] text-ink-soft/80 font-light tracking-wide flex items-center justify-center gap-1.5 uppercase">
-            Reseñas reales de viajeros · fáciles de actualizar con cada nuevo mensaje que recibimos <span className="text-xs">💌</span>
-          </p>
-        </div>
       </div>
     </section>
   );
 }
-
-// Simple helper to check if we are on desktop where all slide/indicators can be represented
-function mdActive() {
-  if (typeof window !== "undefined") {
-    return window.innerWidth >= 768;
-  }
-  return false;
-}
-

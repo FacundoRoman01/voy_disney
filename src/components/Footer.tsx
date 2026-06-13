@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ShieldCheck, Instagram, Heart } from "lucide-react";
+import { ShieldCheck, Instagram, Heart } from "lucide-react";
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -12,14 +12,17 @@ export default function Footer({ onNavigate }: FooterProps) {
         
         {/* Column 1 - Brand description */}
         <div className="md:col-span-2 space-y-4">
-          <div className="flex items-center text-ink">
-            <span className="font-serif text-2xl tracking-normal">
-              Voy <span className="text-disney-pink italic font-semibold">disney</span>
-            </span>
-            <Sparkles className="w-4 h-4 ml-1 text-disney-pink" />
+          <div className="flex items-center text-ink mb-2">
+            {/* Logo de voyDisney */}
+            <img 
+              src="/assets/img/voyDisney_logo.svg" /* <-- REEMPLAZA ESTO CON LA RUTA REAL DE TU LOGO */
+              alt="Voy Disney Logo" 
+              className="h-20 sm:h-24 w-auto object-contain drop-shadow-sm"
+              loading="lazy"
+            />
           </div>
           <p className="text-sm text-ink-soft font-light max-w-sm leading-relaxed">
-            Agencia boutique especializada en cumplir sueños en Disney World Orlando, Disneyland California, Cruceros Disney y Disneyland Paris. Diseñamos viajes a tu medida con dedicación mágica.
+            Agencia especializada en cumplir sueños en Disney World Orlando, Disneyland California, Cruceros Disney y Disneyland Paris. Diseñamos viajes a tu medida con dedicación mágica.
           </p>
           <div className="flex items-center space-x-3 text-emerald-600 text-xs font-semibold uppercase tracking-wide bg-brand-white py-2 px-3 border border-line rounded-sm w-fit shadow-sm">
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -58,12 +61,21 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div>
           <h4 className="text-ink text-xs font-bold uppercase tracking-widest mb-4">Contacto</h4>
           <ul className="space-y-2 text-sm font-light">
+            {/* AQUÍ SE HIZO EL CAMBIO DEL BOTÓN DE WHATSAPP */}
             <li className="flex items-center gap-2">
-              <span className="font-semibold text-ink">WhatsApp:</span> +54 9 11 1234 5678
+              <span className="font-semibold text-ink">WhatsApp:</span> 
+              <a 
+                href="https://wa.me/5491136903650" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-disney-pink transition-colors"
+              >
+                +54 9 11 3690-3650
+              </a>
             </li>
-            <li className="flex items-center gap-2">
+            {/* <li className="flex items-center gap-2">
               <span className="font-semibold text-ink">Email:</span> hola@voydisney.com
-            </li>
+            </li> */}
             <li className="flex items-center gap-2 mt-4 pt-4 border-t border-line">
               <a
                 href="https://instagram.com/voydisney"
@@ -82,9 +94,29 @@ export default function Footer({ onNavigate }: FooterProps) {
       {/* Footer legalities */}
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between text-xs text-ink-soft font-light gap-4">
         <p>© {new Date().getFullYear()} Voy Disney por Agus & Marti. Todos los derechos reservados.</p>
-        <p className="flex items-center gap-1">
-          Diseñado con <Heart className="w-3 h-3 text-disney-pink fill-current animate-pulse" /> para familias viajeras.
+        
+        {/* AQUÍ SE REEMPLAZÓ EL TEXTO POR LOS PERFILES DE LINKEDIN */}
+        <p className="flex items-center gap-1.5 flex-wrap">
+          Desarrollado por 
+          <a 
+            href="https://www.linkedin.com/in/facundoroman/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-medium hover:text-disney-pink transition-colors"
+          >
+            Facundo Roman
+          </a>
+          y
+          <a 
+            href="https://www.linkedin.com/in/mateo-muraglia-200415294/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-medium hover:text-disney-pink transition-colors"
+          >
+            Mateo Muraglia
+          </a>
         </p>
+
       </div>
     </footer>
   );
