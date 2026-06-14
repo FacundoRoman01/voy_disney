@@ -73,9 +73,15 @@ export default function Footer({ onNavigate }: FooterProps) {
                 +54 9 11 3690-3650
               </a>
             </li>
-            {/* <li className="flex items-center gap-2">
-              <span className="font-semibold text-ink">Email:</span> hola@voydisney.com
-            </li> */}
+  <li className="flex items-center gap-2">
+  <span className="font-semibold text-ink">Email:</span> 
+  <a 
+    href="mailto:voydisney@magicfansagents.com"
+    className="hover:text-disney-pink transition-colors"
+  >
+    voydisney@magicfansagents.com
+  </a>
+</li>
             <li className="flex items-center gap-2 mt-4 pt-4 border-t border-line">
               <a
                 href="https://instagram.com/voydisney"

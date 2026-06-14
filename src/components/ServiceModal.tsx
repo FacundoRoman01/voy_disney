@@ -82,12 +82,7 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
         {/* Reducimos la altura a 45vh en mobile para dar espacio al texto */}
         <div className="relative w-full h-[45vh] md:h-full md:w-5/12 shrink-0 bg-gray-50 flex flex-col overflow-hidden group">
           
-          <div className="absolute top-5 left-5 z-20 flex items-center gap-1.5 bg-black/30 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm">
-            <span className="text-white shrink-0">{renderIcon(service.icon)}</span>
-            <span className="text-[10px] font-extrabold tracking-widest text-white uppercase truncate mt-0.5">
-              {service.badge}
-            </span>
-          </div>
+
 
           <div className="relative w-full h-full">
             <AnimatePresence mode="wait">
@@ -116,7 +111,26 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
 
           {hasMultiple && (
             <>
-              <div className="absolute inset-y-0 left-0 flex items-center px-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+              {/* BOTONES SOLO PARA MOBILE (Visibles por defecto en pequeño, ocultos en md+) */}
+              <div className="absolute inset-0 flex items-center justify-between px-4 z-30 md:hidden pointer-events-none">
+                <button
+                  onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                  className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-ink flex items-center justify-center shadow-lg active:scale-95 transition-all pointer-events-auto"
+                  aria-label="Imagen anterior"
+                >
+                  <ChevronLeft className="w-6 h-6 stroke-[2]" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                  className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-ink flex items-center justify-center shadow-lg active:scale-95 transition-all pointer-events-auto"
+                  aria-label="Siguiente imagen"
+                >
+                  <ChevronRight className="w-6 h-6 stroke-[2]" />
+                </button>
+              </div>
+
+              {/* Botones Desktop (con group-hover) */}
+              <div className="absolute inset-y-0 left-0 flex items-center px-3 opacity-0 group-hover:opacity-100 transition-opacity z-20 hidden md:flex">
                 <button
                   onClick={(e) => { e.stopPropagation(); handlePrev(); }}
                   className="w-9 h-9 rounded-full bg-white/70 backdrop-blur-md text-ink hover:text-[#efa9c0] hover:bg-white transition-all flex items-center justify-center cursor-pointer shadow-md"
@@ -124,7 +138,7 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
                   <ChevronLeft className="w-5 h-5 stroke-[2]" />
                 </button>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center px-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+              <div className="absolute inset-y-0 right-0 flex items-center px-3 opacity-0 group-hover:opacity-100 transition-opacity z-20 hidden md:flex">
                 <button
                   onClick={(e) => { e.stopPropagation(); handleNext(); }}
                   className="w-9 h-9 rounded-full bg-white/70 backdrop-blur-md text-ink hover:text-[#efa9c0] hover:bg-white transition-all flex items-center justify-center cursor-pointer shadow-md"
